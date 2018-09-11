@@ -5,7 +5,6 @@ var filters = {
 };
 
 
-
 window.addEventListener("mousemove", function (e) {
     if (e.target.nodeName === 'INPUT') {
 
@@ -13,9 +12,5 @@ window.addEventListener("mousemove", function (e) {
 
         var cssFilters = 'blur(' + filters['blur'] + 'px) contrast('+ filters['contrast'] +'%) hue-rotate('+ filters['hue']+'deg)'; 
         document.querySelector('.shader').setAttribute('style', 'filter: ' + cssFilters);
-        console.log(cssFilters);
-        
-//            shader.style.filter = cssFilters;
-        
-        }
+    }
 });
