@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+    <link rel="stylesheet" href="css-shader.css">
+    </head>
+    <body>
+        <section>
+            <div class="demo">
+                
+                <ul class="shader">
+                    <li class="perlin"></li>
+                    <li class="gradient"></li>
+                    <li class="mask"></li>
+                    <li class="color"></li>
+                </ul>
+                <fieldset>
+                    <label for="contrast" value=""><input name="contrast" type="range" min="75" max="150" value="120">
+                    
+                </label>
+                <label for="hue" value="">
+                    <input name="hue" type="range" min="0" max="360" value="180">
+                    
+                </label>
+                <label for="blur" value="">
+                    <input name="blur" type="range" min="0" max="2" step="0.1" value="0.66">
+                    
+                </label>
+                </fieldset>
+            </div>
+        </section>
+    </body>
+    <script src="app.js"></script>
+</html>

@@ -1,0 +1,114 @@
+body {
+    background: #000;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.demo {
+    max-width: 80vw;
+    height: 128px;
+    margin: 1em auto;
+}
+
+fieldset {
+	padding: 2em 0;
+	border: 1px solid white;
+	margin: 0;
+}
+
+label:after {
+    content: attr(for);
+    color: white;
+    display: block;
+}
+
+label {
+	display: inline-block;
+	text-align: center;
+	width: 33%;
+	padding: 0;
+	margin: 0;
+}
+
+input[type=range] {
+	width: 29%;
+	height: 50vh;
+	cursor: pointer;
+	-webkit-appearance: slider-vertical; /* WebKit */
+}
+
+ul.shader {
+    display: block;
+    height: 128px;
+    list-style: none;
+    position: relative;
+    filter: 
+        blur(0px) contrast(100%) hue-rotate(210deg);
+    mix-blend-mode: hard-light;
+    /* transform: scale(2); */
+    overflow: hidden;
+    margin: 1em 0 0 0;
+    padding: 0;
+    /* animation: hue-rotate 5s linear infinite; */
+}
+
+@keyframes hue-rotate {
+	from {
+		filter: 
+        blur(2px) contrast(100%) hue-rotate(0deg);
+	}
+	50% {
+		filter: 
+        blur(0px) contrast(100%) hue-rotate(180deg);
+	}
+	to {
+		filter: 
+        blur(1px) contrast(100%) hue-rotate(360deg);
+	}
+}
+
+ul li {
+    display: inline-block;
+    position: absolute;
+    /* margin: 1em; */
+    height: 128px;
+    width: 100%;
+    padding: 0;
+}
+
+li.perlin {
+	background: url(perlin-128.png);
+    animation: moveup 2s linear infinite;
+    background-blend-mode: multiply;
+    z-index: 3;
+    
+	mix-blend-mode: color-burn;
+	/*! background-size: 100%; */
+	/*! filter: blur(0px); */
+}
+
+
+li.gradient {
+    background-image: linear-gradient(black, white);
+    mix-blend-mode: multiply;
+    z-index: 2;
+
+}
+
+li.mask {
+    /* */
+}
+
+li.color {
+    background-image: linear-gradient(white 6%, yellow 28%, yellow 91%, orange 110%);
+    z-index: 0;
+}
+
+@keyframes moveup {
+    0% {
+        background-position-y: 128px;
+    }
+
+    100% {
+        background-position-y: 0;
+    }
+}
