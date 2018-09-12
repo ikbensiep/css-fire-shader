@@ -5,7 +5,7 @@ body {
 
 .demo {
     max-width: 80vw;
-    height: 128px;
+    /* height: 128px; */
     margin: 1em auto;
 }
 
@@ -45,6 +45,7 @@ ul.shader {
     overflow: hidden;
     margin: 1em 0 0 0;
     padding: 0;
+    filter: hue(62deg) blur(1.3px) contrast(274%) brightness(52%);
 }
 
 
@@ -58,15 +59,15 @@ ul li {
 
 li.perlin {
 	background: url(perlin-128.png);
-    animation: moveup 5s linear infinite;
-    background-blend-mode: multiply;
-    z-index: 3;
-    background-size: 100%;
+	animation: moveup 5s linear infinite;
+	background-blend-mode: multiply;
+	z-index: 3;
+	background-size: 320% 2000px;
 	mix-blend-mode: color-burn;
 	image-rendering: pixelated;
-  	image-rendering: -moz-crisp-edges;
-  	image-rendering: crisp-edges;
-  	box-shadow: inset 0 0 15px 10px black;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+	box-shadow: inset 0 0 15px 10px black;
 }
 
 
@@ -74,7 +75,7 @@ li.gradient {
     background-image: linear-gradient(black, white);
     mix-blend-mode: multiply;
     z-index: 2;
-
+    /* opacity: 0; */
 }
 
 li.mask {
@@ -82,7 +83,7 @@ li.mask {
 }
 
 li.color {
-    background-image: linear-gradient(white 0%, yellow 10%, orange 12%);
+    background-image: linear-gradient(white 0%, yellow 40%, orange 82%);
     z-index: 0;
 }
 
