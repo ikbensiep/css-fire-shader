@@ -1,7 +1,7 @@
 var filters = {
-    'hue' : 180,
+    'hue' : 0,
     'blur': 0,
-    'contrast': 120
+    'contrast': 128
 };
 
 

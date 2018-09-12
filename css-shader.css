@@ -24,7 +24,7 @@ label:after {
 label {
 	display: inline-block;
 	text-align: center;
-	width: 33%;
+	/* width: 33%; */
 	padding: 0;
 	margin: 0;
 }
@@ -38,52 +38,35 @@ input[type=range] {
 
 ul.shader {
     display: block;
-    height: 128px;
+    height: 30vh;
     list-style: none;
     position: relative;
-    filter: 
-        blur(0px) contrast(100%) hue-rotate(210deg);
     mix-blend-mode: hard-light;
-    /* transform: scale(2); */
     overflow: hidden;
     margin: 1em 0 0 0;
     padding: 0;
-    /* animation: hue-rotate 5s linear infinite; */
 }
 
-@keyframes hue-rotate {
-	from {
-		filter: 
-        blur(2px) contrast(100%) hue-rotate(0deg);
-	}
-	50% {
-		filter: 
-        blur(0px) contrast(100%) hue-rotate(180deg);
-	}
-	to {
-		filter: 
-        blur(1px) contrast(100%) hue-rotate(360deg);
-	}
-}
 
 ul li {
     display: inline-block;
     position: absolute;
-    /* margin: 1em; */
-    height: 128px;
+    height: 30vh;
     width: 100%;
     padding: 0;
 }
 
 li.perlin {
 	background: url(perlin-128.png);
-    animation: moveup 2s linear infinite;
+    animation: moveup 5s linear infinite;
     background-blend-mode: multiply;
     z-index: 3;
-    
+    background-size: 100%;
 	mix-blend-mode: color-burn;
-	/*! background-size: 100%; */
-	/*! filter: blur(0px); */
+	image-rendering: pixelated;
+  	image-rendering: -moz-crisp-edges;
+  	image-rendering: crisp-edges;
+  	box-shadow: inset 0 0 15px 10px black;
 }
 
 
@@ -99,16 +82,16 @@ li.mask {
 }
 
 li.color {
-    background-image: linear-gradient(white 6%, yellow 28%, yellow 91%, orange 110%);
+    background-image: linear-gradient(white 0%, yellow 10%, orange 12%);
     z-index: 0;
 }
 
 @keyframes moveup {
     0% {
-        background-position-y: 128px;
+        background-position-y: 0;
     }
 
     100% {
-        background-position-y: 0;
+        background-position-y: 100%;
     }
 }
