@@ -13,7 +13,7 @@ var filters = {
         'unit': '%'
     },
     'brightness': {
-        'value': 0,
+        'value': 100,
         'unit': '%'
     }
 };
@@ -27,6 +27,17 @@ function stampFilterString (filters) {
 }
 
 window.addEventListener("mousemove", function (e) {
+    if (e.target.nodeName === 'INPUT') {
+
+        filters[e.target.name]['value'] = e.target.value;
+
+        var cssFilters = stampFilterString(filters);
+        //document.querySelector('.shader').setAttribute('style', 'filter: ' + cssFilters);
+        document.querySelector('.shader').style.filter = cssFilters;
+    }
+});
+
+window.addEventListener("touchmove", function (e) {
     if (e.target.nodeName === 'INPUT') {
 
         filters[e.target.name]['value'] = e.target.value;
